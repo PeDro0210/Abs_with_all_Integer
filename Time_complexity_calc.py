@@ -26,13 +26,15 @@ for i in range (n):
 
 average_time = np.sum(show_time)/n
 
+start_time2 = hour.time()
+
 for i in range (n):
     
     program_comparation()
     
     end_time2 = hour.time()
 
-    total_time2 = end_time2 - start_time
+    total_time2 = end_time2 - start_time2
 
     show_time2[i]=total_time2
     
