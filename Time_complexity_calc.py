@@ -46,7 +46,7 @@ if average_time>average_time2:
                 writer = csv.writer(file)
                 writer.writerow(['el mio','el de chatgpt'])
                 writer.writerow([average_time,average_time2])
-                writer.writerow(['Program 2 gana'])
+                writer.writerow(['Program 2 wins'])
                 writer.writerow([min(average_time,average_time2)])
 
 else:
@@ -54,7 +54,7 @@ else:
                 writer = csv.writer(file)
                 writer.writerow(['el mio','el de chatgpt'])
                 writer.writerow([average_time,average_time2])
-                writer.writerow(['Program 1 gana'])
+                writer.writerow(['Program 1 wins'])
                 writer.writerow([min(average_time,average_time2)])
 
 
