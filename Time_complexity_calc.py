@@ -1,7 +1,7 @@
 import numpy as np
 import time as hour 
 import csv as csv
-from resolve_integer import your_program, program_comparation
+from code_workplace import your_program, program_comparation
 
 start_time = hour.time()
 nombre= input("Ingrese el nombre del archivo: ")
@@ -9,6 +9,7 @@ nombre= input("Ingrese el nombre del archivo: ")
 n=100
 show_time=np.zeros([n])
 show_time2=np.zeros([n])
+
 
 
 for i in range (n):
