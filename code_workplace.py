@@ -24,7 +24,7 @@ def your_program():
     
     randomizer(n)
     
-    #algoritmo para resolver los numeros interos
+    #algoritmo para resolver los numeros enteros
     integer_array= np.negative((np.arange(randomize,randomize2,1)))
     np.random.shuffle(integer_array)
                 
