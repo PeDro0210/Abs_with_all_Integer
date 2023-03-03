@@ -58,7 +58,7 @@ def program_comparation():
                 max_val = arr[i]
         return abs(max_val)
 
-# Example usage:
+
     integer_array= np.negative((np.arange(randomize,randomize2,1)))
     max_abs_value = max_abs(integer_array)
     print(max_abs_value)
