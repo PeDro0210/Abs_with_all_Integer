@@ -26,6 +26,8 @@ for i in range (n):
     print(show_time[i])
 average_time = np.average(show_time)
 
+start_time2 = hour.time()
+
 for i in range (n):
     start_time2 = hour.time()
     
@@ -35,6 +37,9 @@ for i in range (n):
     
     float;
     total_time2 = end_time2 - start_time2
+
+    total_time2 = end_time2 - start_time2
+
     show_time2[i]=total_time2
     
     
