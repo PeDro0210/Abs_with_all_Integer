@@ -4,6 +4,7 @@ import numpy as np
 
 #global things
 n = float(input("Enter the number of integers you want to generate: "))
+
 def randomizer(n):
     randomize = np.negative(rd.randrange(int (n-1)//2 ,int(-n-1)//2,-1))
     randomize2 = np.negative(rd.randrange(int(n-1)//2 ,int(-n-1)//2,-1))
@@ -20,6 +21,7 @@ randomize,randomize2= randomizer(n)
 
 def your_program():
     #your program
+
     print("Your program")
     
     randomizer(n)
@@ -28,15 +30,14 @@ def your_program():
     integer_array= np.negative((np.arange(randomize,randomize2,1)))
     np.random.shuffle(integer_array)
                 
-    maxi = np.max(integer_array)
-    mini = np.min(integer_array)
+    maxi = np.abs(np.max(integer_array))
+    mini = np.abs(np.min(integer_array))
 
-    maxabs = np.abs(maxi)
-    minabs = np.abs(mini)
+
 
     print("The list of integers is: ", integer_array)
-    print("The maximum value is: ", maxabs)
-    print("The minimum value is: ", minabs)
+    print("The maximum value is: ", maxi)
+    print("The minimum value is: ", mini)
             
     
         
@@ -47,22 +48,33 @@ def your_program():
     
 def program_comparation():
     #program comparation
+
     print("Program comparation")
     randomizer(n)
 
     
     def max_abs(arr):
-        max_val = None
+        max_neg = -1
+        max_pos = 0
         for i in range(len(arr)):
-            if max_val is None or abs(arr[i]) > abs(max_val):
-                max_val = arr[i]
-        return abs(max_val)
-
-
-    integer_array= np.negative((np.arange(randomize,randomize2,1)))
-    max_abs_value = max_abs(integer_array)
-    print(max_abs_value)
-
-
-
+            
+            if arr[i] < 0:
+                
+                if abs(arr[i]) > max_neg:
+                    
+                    max_neg = arr[i]
+                    
+            elif arr[i] > 0:
+                
+                if abs(arr[i]) > max_pos:
+                    
+                    max_pos = arr[i]
+                    
+        return abs(max_neg), abs(max_pos)
     
+    integer_array= np.negative((np.arange(randomize,randomize2,1)))
+    max_abs_value_1, max_abs_value_2 = max_abs(integer_array)
+    np.random.shuffle(integer_array)
+    print(max_abs_value_1, max_abs_value_2)
+    
+
