@@ -12,7 +12,7 @@ it = int(input("how much interations you want to do: "))
 nombre= input("Ingrese el nombre del archivo: ")
 num= int(input("Ingrese el numero: "))
 
-#all fix :D
+#fix dude
 
 
 #arrays 
