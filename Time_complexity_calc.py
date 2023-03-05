@@ -10,6 +10,7 @@ pid = os.getpid()
 start_time = hour.time()
 it = int(input("how much interations you want to do: "))
 nombre= input("Ingrese el nombre del archivo: ")
+num= int(input("Ingrese el numero: "))
 
 
 
@@ -29,7 +30,7 @@ after_memory_usage = process.memory_info().rss
 for i in range(it):
     start_time = hour.time()
 
-    your_program()
+    your_program(num)
     
     end_time = hour.time()
     
@@ -38,12 +39,12 @@ for i in range(it):
     total_time = end_time - start_time
     
     show_time[i] = total_time
-    
+    print("Iteration: ", i+1)
     print(show_time[i])
 
 before_memory_usage = process.memory_info().rss
 
-difference_memory_usage = before_memory_usage - after_memory_usage
+difference_memory_usage = max(before_memory_usage,after_memory_usage) - min(after_memory_usage,before_memory_usage)
 
 difference_memory_usage= difference_memory_usage/it
     
@@ -61,19 +62,14 @@ after_memory_usage2 = process.memory_info().rss
 for i in range (it):
     start_time2 = hour.time()
     
-    program_comparation()
+    program_comparation(num)
     
     end_time2 = hour.time()
-    before_memory_usage2 = psutil.Process(pid).memory_info().rss
     
-    float;
     total_time2 = end_time2 - start_time2
-    difference_memory_usage2 = before_memory_usage - after_memory_usage
-
-
     show_time2[i]=total_time2
     
-    
+    print("Iteration: ", i+1)
     print(show_time2[i])
     
 before_memory_usage2 = process.memory_info().rss
@@ -84,8 +80,6 @@ difference_memory_usage2= difference_memory_usage2/it
     
 print(f"the average is {difference_memory_usage2} bytes per iteration")    
 
-
-    
 average_time2 = np.average(show_time2)
 
 
@@ -95,7 +89,7 @@ average_time2 = np.average(show_time2)
 
 with open(f"{nombre}.csv", "a", newline='') as file:
                 writer = csv.writer(file)
-                writer.writerow(['el mio','el de chatgpt'])
+                writer.writerow(['Programa 1','Programa 2'])
                 writer.writerow(['Tiempo','Tiempo'])
                 writer.writerow([average_time,average_time2])
                 writer.writerow(['Memoria','Memoria'])
