@@ -33,8 +33,6 @@ def your_program():
     maxi = np.abs(np.max(integer_array))
     mini = np.abs(np.min(integer_array))
 
-
-
     print("The list of integers is: ", integer_array)
     print("The maximum value is: ", maxi)
     print("The minimum value is: ", mini)
